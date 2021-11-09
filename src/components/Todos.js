@@ -12,7 +12,14 @@ const Todos = () => {
 
     const onTodoClicked = (todo) => {
         let newTodo = { ...todo, completed: !todo.completed };
-        let newTodos = todos.map(todo => todo.id === newTodo.id ? { ...todo, completed: !todo.completed } : todo);
+        let newTodos = todos.map(todo => todo.id === newTodo.id ?
+            { ...todo, completed: !todo.completed } :
+            todo);
+        setTodos(newTodos);
+    }
+
+    const onTodoDeleted = (deletedTodo) => {
+        let newTodos = todos.filter(todo => todo.id !== deletedTodo.id);
         setTodos(newTodos);
     }
 
@@ -20,7 +27,13 @@ const Todos = () => {
         []);
 
     if (todos) {
-        return todos.map((todo, i) => <Todo key={i} todo={todo} todoClicked={(todo) => onTodoClicked(todo)} />)
+        return todos.map((todo, i) =>
+            <Todo
+                key={i}
+                todo={todo}
+                todoClicked={(todo) => onTodoClicked(todo)}
+                deleteTodo={(todo) => onTodoDeleted(todo)}
+            />)
     } else {
         return <p>Loading...</p>
     }

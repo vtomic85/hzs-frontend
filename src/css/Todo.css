@@ -32,3 +32,8 @@
 .todo-status.done {
     color:grey;
 }
+
+.delete-icon {
+    color:red;
+    float:right;
+}
