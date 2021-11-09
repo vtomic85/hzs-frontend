@@ -1,0 +1,10 @@
+.header {
+    font-size: 36px;
+    text-align: center;
+    font-weight: bold;
+    background-color: navy;
+    color: white;
+    padding: 10px 0;
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+}

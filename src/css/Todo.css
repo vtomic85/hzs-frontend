@@ -4,13 +4,20 @@
     border: 1px solid navy;
     border-radius: 10px;
     box-sizing: border-box;
+    padding: 5px;
     margin: 5px 5px;
     float:left;
     cursor:pointer;
 }
 
+.todo:hover {
+    box-shadow: blue 5px 5px 5px;
+    border:3px solid blue;
+    transition-duration: 200ms;
+}
+
 .todo-title {
-    padding:5px;
+    padding:10px;
     background-color: navy;
     border-radius: 10px 10px 0 0;
     color:white;
@@ -34,6 +41,7 @@
 }
 
 .delete-icon {
+    font-size: 20px;
     color:red;
     float:right;
 }
