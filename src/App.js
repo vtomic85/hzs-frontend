@@ -10,7 +10,7 @@ function App() {
         firstName="Vladimir"
         lastName="Tomic"
         age={age}
-        onAgeUp={(x) => setAge(age + x)}
+        onAgeUp={(delta) => setAge(age + parseInt(delta))}
       />
     </div>
   );
