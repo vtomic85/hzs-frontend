@@ -1,17 +1,9 @@
-import { useState } from "react";
-import Greeting from "./components/Greeting";
+import Todos from "./components/Todos";
 
 function App() {
-  const [age, setAge] = useState(36);
-
   return (
     <div>
-      <Greeting
-        firstName="Vladimir"
-        lastName="Tomic"
-        age={age}
-        onAgeUp={(delta) => setAge(age + parseInt(delta))}
-      />
+      <Todos />
     </div>
   );
 }

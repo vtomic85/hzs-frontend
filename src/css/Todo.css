@@ -1,0 +1,34 @@
+.todo {
+    width: 200px;
+    height: 200px;
+    border: 1px solid navy;
+    border-radius: 10px;
+    box-sizing: border-box;
+    margin: 5px 5px;
+    float:left;
+    cursor:pointer;
+}
+
+.todo-title {
+    padding:5px;
+    background-color: navy;
+    border-radius: 10px 10px 0 0;
+    color:white;
+    height:80%;
+}
+
+.todo-title.done {
+    background-color: lightgray;
+    color:grey;
+    text-decoration: line-through;
+}
+
+.todo-status {
+    height:20%;
+    font-style: italic;
+    text-align: center;
+}
+
+.todo-status.done {
+    color:grey;
+}
