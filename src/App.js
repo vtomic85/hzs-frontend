@@ -1,6 +1,9 @@
+import Greeting from "./components/Greeting";
+
 function App() {
   return (
-    <div>Hello, I am the App component :)
+    <div>
+      <Greeting firstName="Vladimir" lastName="Tomic" />
     </div>
   );
 }
