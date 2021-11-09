@@ -3,7 +3,7 @@ const Greeting = (props) => {
         <div>
             <p>Hello, {props.firstName} {props.lastName}, nice to meet you!</p>
             <p>You are {props.age} years old.</p>
-            <button onClick={props.onAgeUp}>Age up</button>
+            <button onClick={() => props.onAgeUp(5)}>Age up</button>
         </div>
     );
 }

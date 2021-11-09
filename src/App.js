@@ -10,7 +10,7 @@ function App() {
         firstName="Vladimir"
         lastName="Tomic"
         age={age}
-        onAgeUp={() => setAge(age + 1)}
+        onAgeUp={(x) => setAge(age + x)}
       />
     </div>
   );
