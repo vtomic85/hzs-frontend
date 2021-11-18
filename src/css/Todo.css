@@ -22,12 +22,14 @@
     border-radius: 10px 10px 0 0;
     color:white;
     height:80%;
+    transition-duration: 1000ms;
 }
 
 .todo-title.done {
     background-color: lightgray;
     color:grey;
     text-decoration: line-through;
+    transition-duration: 1000ms;
 }
 
 .todo-status {
