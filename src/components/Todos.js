@@ -3,7 +3,7 @@ import TodoList from "./TodoList";
 import NewTodoForm from "./NewTodoForm";
 
 const Todos = () => {
-    const BASE_URL = 'https://jsonplaceholder.typicode.com/todos/';
+    const BASE_URL = 'https://hzs-todo.herokuapp.com/todo-items/';
     const [todos, setTodos] = useState([]);
 
     const getData = () => {
@@ -32,10 +32,11 @@ const Todos = () => {
         fetch(BASE_URL + todo.id, {
             method: 'PUT',
             body: JSON.stringify({
-                userId: todo.userId,
                 id: todo.id,
                 title: todo.title,
-                completed: newTodo.completed
+                description: todo.description,
+                todoItemType: todo.todoItemType,
+                createdAt: todo.createdAt
             }),
             headers: {
                 'Content-type': 'application/json; charset=UTF-8',
@@ -50,7 +51,8 @@ const Todos = () => {
             method: 'POST',
             body: JSON.stringify({
                 title: todo.title,
-                completed: todo.completed
+                description: todo.description,
+                todoItemType: todo.todoItemType,
             }),
             headers: {
                 'Content-type': 'application/json; charset=UTF-8',

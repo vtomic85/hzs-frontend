@@ -1,4 +1,4 @@
-.todo {
+.todo-container {
     width: 200px;
     height: 200px;
     border: 1px solid navy;
@@ -6,44 +6,77 @@
     box-sizing: border-box;
     padding: 5px;
     margin: 5px 5px;
-    float:left;
-    cursor:pointer;
+    float: left;
+    cursor: pointer;
 }
 
-.todo:hover {
-    box-shadow: blue 5px 5px 5px;
-    border:3px solid blue;
+.todo-container:hover {
+    box-shadow: lightgray 2px 2px 2px inset;
+    border: 2px solid gray;
     transition-duration: 200ms;
 }
 
-.todo-title {
-    padding:10px;
+.todo-content {
+    padding: 10px;
     background-color: navy;
     border-radius: 10px 10px 0 0;
-    color:white;
-    height:80%;
+    color: white;
+    height: 80%;
     transition-duration: 1000ms;
 }
 
-.todo-title.done {
+.todo-content.done {
     background-color: lightgray;
-    color:grey;
+    color: grey;
     text-decoration: line-through;
     transition-duration: 1000ms;
 }
 
+.todo-h3-title {
+    float: left;
+    font-size: 18px;
+    font-weight: bold;
+    color: yellow;
+}
+
+.todo-content.done .todo-h3-title {
+    color: grey;
+    text-decoration: line-through;
+}
+
+.todo-type {
+    float: right;
+    font-style: italic;
+    text-transform: uppercase;
+    font-size: 12px;
+    background-color: white;
+    color: navy;
+    padding: 2px 5px;
+    border-radius: 2px;
+}
+
+.todo-description {
+    float: left;
+    clear: both;
+}
+
+.todo-content.done .todo-description {
+    color: grey;
+    text-decoration: line-through;
+}
+
 .todo-status {
-    height:20%;
+    height: 20%;
     font-style: italic;
     text-align: center;
 }
 
 .todo-status.done {
-    color:grey;
+    color: grey;
 }
 
 .delete-icon {
     font-size: 20px;
-    color:red;
-    float:right;
+    color: red;
+    float: right;
 }
