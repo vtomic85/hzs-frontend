@@ -3,10 +3,11 @@ import TodoList from "./TodoList";
 import NewTodoForm from "./NewTodoForm";
 
 const Todos = () => {
+    const BASE_URL = 'https://jsonplaceholder.typicode.com/todos/';
     const [todos, setTodos] = useState([]);
 
     const getData = () => {
-        fetch('https://jsonplaceholder.typicode.com/todos')
+        fetch(BASE_URL)
             .then(response => response.json())
             .then(data => setTodos(data));
     }
@@ -14,7 +15,7 @@ const Todos = () => {
     const onTodoDeleted = (deletedTodo) => {
         let newTodos = todos.filter(todo => todo.id !== deletedTodo.id);
         setTodos(newTodos);
-        fetch('https://jsonplaceholder.typicode.com/todos/' + deletedTodo.id, {
+        fetch(BASE_URL + deletedTodo.id, {
             method: 'DELETE',
         });
     }
@@ -28,7 +29,7 @@ const Todos = () => {
             {...todo, completed: !todo.completed} :
             todo);
         setTodos(newTodos);
-        fetch('https://jsonplaceholder.typicode.com/todos/' + todo.id, {
+        fetch(BASE_URL + todo.id, {
             method: 'PUT',
             body: JSON.stringify({
                 userId: todo.userId,
@@ -42,10 +43,10 @@ const Todos = () => {
         });
     }
 
-    const addNewTodo = (todo) => {
+    const onTodoAdded = (todo) => {
         let newTodos = [...todos, todo];
         setTodos(newTodos);
-        fetch('https://jsonplaceholder.typicode.com/todos', {
+        fetch(BASE_URL, {
             method: 'POST',
             body: JSON.stringify({
                 title: todo.title,
@@ -59,7 +60,7 @@ const Todos = () => {
 
     return (
         <>
-            <NewTodoForm onTodoAdded={(todo) => addNewTodo(todo)}/>
+            <NewTodoForm onTodoAdded={(todo) => onTodoAdded(todo)}/>
             <TodoList todos={todos} onTodoClicked={onTodoClicked} onTodoDeleted={onTodoDeleted}/>
         </>
     );
