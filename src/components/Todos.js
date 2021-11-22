@@ -24,23 +24,14 @@ const Todos = () => {
         []);
 
     const onTodoClicked = (todo) => {
-        let newTodo = {...todo, completed: !todo.completed};
+        let newTodo = {...todo, isDone: !todo.isDone};
         let newTodos = todos.map(todo => todo.id === newTodo.id ?
-            {...todo, completed: !todo.completed} :
+            {...todo, isDone: !todo.isDone} :
             todo);
         setTodos(newTodos);
-        fetch(BASE_URL + todo.id, {
-            method: 'PUT',
-            body: JSON.stringify({
-                id: todo.id,
-                title: todo.title,
-                description: todo.description,
-                todoItemType: todo.todoItemType,
-                createdAt: todo.createdAt
-            }),
-            headers: {
-                'Content-type': 'application/json; charset=UTF-8',
-            },
+        const path = `${BASE_URL}/${newTodo.id}/${newTodo.isDone ? 'done' : 'not-done'}`;
+        fetch(path, {
+            method: 'PUT'
         });
     }
 
@@ -53,6 +44,7 @@ const Todos = () => {
                 title: todo.title,
                 description: todo.description,
                 todoItemType: todo.todoItemType,
+                isDone: todo.isDone
             }),
             headers: {
                 'Content-type': 'application/json; charset=UTF-8',
