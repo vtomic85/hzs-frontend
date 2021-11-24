@@ -1,8 +1,26 @@
 * {
-    font-family: Calibri;
+  font-family: Calibri;
 }
 
 .container {
-    width: 80%;
-    margin: 0 auto;
+  width: 80%;
+  margin: 0 auto;
+}
+
+nav {
+  padding: 10px;
+}
+
+.link {
+  text-decoration: none;
+  padding: 5px;
+  margin-right: 10px;
+  border-radius: 3px;
+  border: 1px solid navy;
+}
+
+.link:hover {
+  background-color: azure;
+  box-shadow: navy 1px 1px 1px;
+  transition-duration: 300ms;
 }
