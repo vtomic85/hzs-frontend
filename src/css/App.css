@@ -21,6 +21,6 @@ nav {
 
 .link:hover {
   background-color: azure;
-  box-shadow: navy 1px 1px 1px;
+  box-shadow: navy 1px 1px 1px inset;
   transition-duration: 300ms;
 }

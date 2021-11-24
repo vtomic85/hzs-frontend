@@ -1,82 +1,80 @@
-.todo-container {
-    width: 200px;
-    height: 200px;
-    border: 1px solid navy;
-    border-radius: 10px;
-    box-sizing: border-box;
-    padding: 5px;
-    margin: 5px 5px;
-    float: left;
-    cursor: pointer;
+.todo-holder {
+  border: 1px solid navy;
+  border-radius: 10px;
+  box-sizing: border-box;
+  padding: 5px;
+  margin: 5px 5px;
+  float: left;
+  cursor: pointer;
 }
 
-.todo-container:hover {
-    box-shadow: lightgray 2px 2px 2px inset;
-    border: 2px solid gray;
-    transition-duration: 200ms;
+.todo-holder:hover {
+  box-shadow: lightgray 2px 2px 2px inset;
+  border: 2px solid gray;
+  transition-duration: 200ms;
 }
 
 .todo-content {
-    padding: 10px;
-    background-color: navy;
-    border-radius: 10px 10px 0 0;
-    color: white;
-    height: 80%;
-    transition-duration: 1000ms;
+  padding: 10px;
+  background-color: navy;
+  border-radius: 10px 10px 0 0;
+  color: white;
+  height: 80%;
+  transition-duration: 1000ms;
 }
 
 .todo-content.done {
-    background-color: lightgray;
-    color: grey;
-    text-decoration: line-through;
-    transition-duration: 1000ms;
+  background-color: lightgray;
+  color: grey;
+  text-decoration: line-through;
+  transition-duration: 1000ms;
 }
 
 .todo-h3-title {
-    float: left;
-    font-size: 18px;
-    font-weight: bold;
-    color: yellow;
+  float: left;
+  font-size: 18px;
+  font-weight: bold;
+  color: yellow;
 }
 
 .todo-content.done .todo-h3-title {
-    color: grey;
-    text-decoration: line-through;
+  color: grey;
+  text-decoration: line-through;
 }
 
 .todo-type {
-    float: right;
-    font-style: italic;
-    text-transform: uppercase;
-    font-size: 12px;
-    background-color: white;
-    color: navy;
-    padding: 2px 5px;
-    border-radius: 2px;
+  float: right;
+  font-style: italic;
+  text-transform: uppercase;
+  font-size: 12px;
+  background-color: white;
+  color: navy;
+  padding: 2px 5px;
+  border-radius: 2px;
 }
 
 .todo-description {
-    float: left;
-    clear: both;
+  float: left;
+  clear: both;
 }
 
 .todo-content.done .todo-description {
-    color: grey;
-    text-decoration: line-through;
+  color: grey;
+  text-decoration: line-through;
 }
 
 .todo-status {
-    height: 20%;
-    font-style: italic;
-    text-align: center;
+  height: 20%;
+  font-style: italic;
+  text-align: center;
 }
 
 .todo-status.done {
-    color: grey;
+  color: grey;
 }
 
 .delete-icon {
-    font-size: 20px;
-    color: red;
-    float: right;
+  font-size: 20px;
+  color: red;
+  float: right;
 }
