@@ -6,9 +6,9 @@ const TodoList = ({ todos, onTodoClicked, onTodoDeleted }) => {
       {
         // If there are todos...
         todos &&
-          todos.map((todo, i) => (
+          todos.map((todo) => (
             <Todo
-              key={i}
+              key={todo.id}
               todo={todo}
               todoClicked={(todo) => onTodoClicked(todo)}
               deleteTodo={(todo) => onTodoDeleted(todo)}
