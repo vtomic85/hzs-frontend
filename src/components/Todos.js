@@ -4,14 +4,8 @@ import NewTodoForm from "./NewTodoForm";
 import "../css/Todos.css";
 
 const Todos = () => {
-  const BASE_URL = "https://hzs-todo.herokuapp.com/todo-items/";
+  const BASE_URL = process.env.REACT_APP_BACKEND_URL;
   const [todos, setTodos] = useState([]);
-
-  const getData = () => {
-    fetch(BASE_URL)
-      .then((response) => response.json())
-      .then((data) => setTodos(data));
-  };
 
   const onTodoDeleted = (deletedTodo) => {
     let newTodos = todos.filter((todo) => todo.id !== deletedTodo.id);
@@ -21,7 +15,14 @@ const Todos = () => {
     });
   };
 
-  useEffect(() => getData(), []);
+  useEffect(() => {
+    const getData = () => {
+      fetch(BASE_URL)
+        .then((response) => response.json())
+        .then((data) => setTodos(data));
+    };
+    getData();
+  }, []);
 
   const onTodoClicked = (todo) => {
     let newTodo = { ...todo, isDone: !todo.isDone };
