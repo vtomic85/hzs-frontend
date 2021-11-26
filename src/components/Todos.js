@@ -76,7 +76,7 @@ const Todos = () => {
       body: JSON.stringify({
         title: todo.title,
         description: todo.description,
-        todoItemType: todo.todoItemType,
+        todoItemType: todo.todoItemType || "WORK",
         isDone: todo.isDone,
       }),
       headers: {
