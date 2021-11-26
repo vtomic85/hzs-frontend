@@ -31,7 +31,6 @@
 }
 
 .todo-h3-title {
-  float: left;
   font-size: 18px;
   font-weight: bold;
   color: yellow;
@@ -43,7 +42,6 @@
 }
 
 .todo-type {
-  float: right;
   font-style: italic;
   text-transform: uppercase;
   font-size: 12px;
