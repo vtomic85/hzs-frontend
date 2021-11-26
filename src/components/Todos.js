@@ -55,6 +55,7 @@ const Todos = () => {
   }, []);
 
   const onTodoClicked = (todo) => {
+    console.log(todo);
     let newTodo = { ...todo, isDone: !todo.isDone };
     let newTodos = todos.map((todo) =>
       todo.id === newTodo.id ? { ...todo, isDone: !todo.isDone } : todo
@@ -69,8 +70,6 @@ const Todos = () => {
   };
 
   const onTodoAdded = (todo) => {
-    let newTodos = [...todos, todo];
-    setTodos(newTodos);
     fetch(BASE_URL, {
       method: "POST",
       body: JSON.stringify({
@@ -82,7 +81,12 @@ const Todos = () => {
       headers: {
         "Content-type": "application/json; charset=UTF-8",
       },
-    });
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        let newTodos = [...todos, data];
+        setTodos(newTodos);
+      });
   };
 
   const onSelectedTypesChanged = (id) => {
