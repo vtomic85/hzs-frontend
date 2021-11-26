@@ -51,3 +51,7 @@ button {
 button:hover {
   background-color: #283593;
 }
+
+.middle-form {
+  border-radius: 0;
+}

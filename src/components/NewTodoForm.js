@@ -28,7 +28,12 @@ const NewTodoForm = ({ onTodoAdded }) => {
 
   return (
     <>
-      <form style={{ borderRadius: "0" }}>
+      <form
+        className="middle-form"
+        onSubmit={(e) => {
+          e.preventDefault();
+        }}
+      >
         <div className="heading">Add new TODO</div>
         <div className="formHolder">
           <label htmlFor="newTodoTitle">Title: </label>
