@@ -24,6 +24,9 @@ const NewTodoForm = ({ onTodoAdded }) => {
       description: newTodoDescription,
       todoItemType: newTodoType,
     });
+    setNewTodoType("WORK");
+    setNewTodoTitle("");
+    setNewTodoDescription("");
   };
 
   return (
