@@ -28,7 +28,7 @@ const NewTodoForm = ({ onTodoAdded }) => {
 
   return (
     <>
-      <form>
+      <form style={{ borderRadius: "0" }}>
         <div className="heading">Add new TODO</div>
         <div className="formHolder">
           <label htmlFor="newTodoTitle">Title: </label>
