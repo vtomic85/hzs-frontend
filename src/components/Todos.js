@@ -55,7 +55,6 @@ const Todos = () => {
   }, []);
 
   const onTodoClicked = (todo) => {
-    console.log(todo);
     let newTodo = { ...todo, isDone: !todo.isDone };
     let newTodos = todos.map((todo) =>
       todo.id === newTodo.id ? { ...todo, isDone: !todo.isDone } : todo
